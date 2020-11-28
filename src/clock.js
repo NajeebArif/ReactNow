@@ -11,7 +11,7 @@ class Clock extends React.Component{
         }
     }
 
-    componentDidMount(){
+    componentWillMount(){
         this.launchClock()
     }
 

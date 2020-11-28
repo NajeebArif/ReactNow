@@ -64,7 +64,7 @@ class CustomClock extends React.Component{
         }
     }
 
-    componentDidMount(){
+    componentWillMount(){
         this.launchClock()
     }
 
