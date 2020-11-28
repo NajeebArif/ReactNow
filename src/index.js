@@ -6,6 +6,7 @@ import {Container} from 'react-bootstrap'
 import {Col} from 'react-bootstrap'
 import Footer from './footer'
 import Header from './header'
+import Clock from './clock'
 
 
 class MyDateTimeComponent extends React.Component{
@@ -25,10 +26,29 @@ class ProfileLink extends React.Component{
     }
 }
 
+const HelloWorldStatelessComponent = function(props){
+const h1String = <span>Hello World from {props.componentType}!</span>
+        return (
+            <div className='container'>
+                <div className='row'>
+                    <div className='col-sm' style={{border: '1px black solid', margin:'5px', padding:'5px'}}>
+                        {h1String}
+                    </div>
+                    <div className='col-sm' style={{border: '1px red solid', margin: '5px', padding:'5px'}}>
+                        <h6><MyDateTimeComponent /></h6>
+                    </div>
+                    <div className='col-sm' class='alert alert-primary' role='alert' style={{margin: '5px', padding:'5px'}}> 
+                        <ProfileLink id='profile-link' className='alert-link' url='/user/profile' label='Profile Link' username ='Arif'/>
+                    </div>
+                </div>
+            </div>
+        )
+}
+
 class HelloWorld extends React.Component{
     
     render(){
-        const h1String = <h1>Hello World!</h1>
+    const h1String = <span>Hello World from {this.props.componentType}!</span>
         return (
             <div className='container'>
                 <div className='row'>
@@ -51,11 +71,13 @@ class Body extends React.Component{
     render(){
         return (
             <Container>
-                <Row>
+                <Row style={{marginTop: '50px'}}>
                     <Col><Header/></Col>
+                    <Col xs='3'><Clock/></Col>
                 </Row>
                 <Row>
-                    <Col><HelloWorld /></Col>
+                    <Col><HelloWorld componentType='Component created from Class'/></Col>
+                    <Col><HelloWorldStatelessComponent componentType='Component created from function'/></Col>
                 </Row>
                 <Row>
                     <Col><Footer/></Col>
