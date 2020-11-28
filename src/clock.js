@@ -6,10 +6,13 @@ import * as Icon from 'react-bootstrap-icons'
 class Clock extends React.Component{
     constructor(props){
         super(props)
-        this.launchClock()
         this.state = {
             timeString: (new Date()).toLocaleString()
         }
+    }
+
+    componentDidMount(){
+        this.launchClock()
     }
 
     launchClock() {

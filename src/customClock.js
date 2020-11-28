@@ -59,10 +59,13 @@ const AnalogDisplay = props=>{
 class CustomClock extends React.Component{
     constructor(props){
         super(props)
-        this.launchClock()
         this.state = {
             currentTime: new Date().toLocaleString()
         }
+    }
+
+    componentDidMount(){
+        this.launchClock()
     }
 
     launchClock() {
