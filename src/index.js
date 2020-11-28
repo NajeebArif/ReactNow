@@ -7,6 +7,7 @@ import {Col} from 'react-bootstrap'
 import Footer from './footer'
 import Header from './header'
 import Clock from './clock'
+import CustomClock from './customClock'
 
 
 class MyDateTimeComponent extends React.Component{
@@ -78,6 +79,9 @@ class Body extends React.Component{
                 <Row>
                     <Col><HelloWorld componentType='Component created from Class'/></Col>
                     <Col><HelloWorldStatelessComponent componentType='Component created from function'/></Col>
+                </Row>
+                <Row className="justify-content-md-center">
+                    <Col xs lg="3" className='border'><CustomClock/></Col>
                 </Row>
                 <Row>
                     <Col><Footer/></Col>
