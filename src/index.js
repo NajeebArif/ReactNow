@@ -8,6 +8,9 @@ import Footer from './footer'
 import Header from './header'
 import Clock from './clock'
 import CustomClock from './customClock'
+import VolumeButton from './volumeButton'
+import CustomElements from './customRadioButton'
+import ControlledInput from './controlledInput'
 
 
 class MyDateTimeComponent extends React.Component{
@@ -79,6 +82,11 @@ class Body extends React.Component{
                 <Row>
                     <Col><HelloWorld componentType='Component created from Class'/></Col>
                     <Col><HelloWorldStatelessComponent componentType='Component created from function'/></Col>
+                </Row>
+                <Row>
+                    <Col><VolumeButton/></Col>
+                    <Col><CustomElements/></Col>
+                    <Col><ControlledInput/></Col>
                 </Row>
                 <Row className="justify-content-md-center">
                     <Col xs lg="3" className='border'><CustomClock/></Col>
